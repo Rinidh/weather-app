@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="./index.css">
+  <script src="./theme.js"></script>
+  <title>Weather App &centerdot; by Rinidh</title>
+</head>
+
+<body>
+  <section class="top-banner">
+    <div class="container">
+      <h1 class="heading">Weather App &middot; by Rinidh</h1>
+      <form>
+        <input type="text" placeholder="Search any city" autofocus>
+        <button type="submit">Search</button>
+        <span class="msg"></span>
+    </div>
+  </section>
+
+  <section class="ajax-section">
+    <div class="container">
+      <ul class="cities">
+        <li class="city">
+          <h2 class="city-name" data-name="">
+            <span>City Name</span>
+            <sup>supertext</sup>
+          </h2>
+          <span class="city-temperature">100 <sup> &deg;C </sup> </span>
+          <figure>
+            <img src="./assets/sun.png" alt="sun-icon" class="city-icon">
+            <figcaption>Sun icon</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <script src="./index.js"></script>
+</body>
+
+</html>

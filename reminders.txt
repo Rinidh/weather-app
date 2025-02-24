@@ -1,0 +1,1 @@
+continue: 3. specify some basic styles. (copy obvious ones eg colors & cram specifics for certain elems eg border:none in button & input , ....)
