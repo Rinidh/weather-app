@@ -11,14 +11,14 @@
 }
 
 form input {
-  border-bottom: 1px solid var(--text_light);
+  border-bottom: 1px solid;
   font-size: 1.2em;
   padding: 7px;
   margin-bottom: 15px;
 }
 
 form input::placeholder {
-  color: var(--text_light);
+  color: currentColor;
 }
 
 form button {
@@ -27,7 +27,8 @@ form button {
   width: 100%;
   font-size: 0.8em;
   font-weight: bold;
-  padding: 15px;
+  letter-spacing: 0.1em;
+  padding: 15px 20px;
   border-radius: 5px;
 }
 
@@ -57,6 +58,12 @@ form span.msg {
     font-size: 0.6em;
     padding: 10px;
     border-radius: 3px;
+    margin-left: 10px;
+    transition: background-color 0.15s ease-in-out;
+  }
+
+  form button:hover {
+    background-color: var(--darkred);
   }
 
   form span.msg {
