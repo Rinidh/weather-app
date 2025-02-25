@@ -1,0 +1,89 @@
+.cities {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1000px;
+  font-size: 1rem;
+  /* margin-left: auto;
+  margin-right: auto; */
+}
+
+.city {
+  background-color: white;
+  color: var(--text_dark);
+  min-height: 300px;
+  border-radius: 0.7em;
+  padding: 20px;
+}
+
+.city-name {
+  font-size: 1em;
+}
+
+.city-name span {
+  font-size: 1.4em;
+  color: var(--text_med);
+  font-weight: 500;
+}
+
+.city-name sup {
+  background-color: var(--orange);
+  color: var(--text_light);
+  padding: 0.2em 0.5em;
+  font-size: 0.5em;
+  border-radius: 1em;
+}
+
+.city-temperature {
+  font-size: 3em;
+  font-weight: 700;
+}
+
+.city-temperature sup {
+  font-size: 0.5em;
+}
+
+figure {
+  margin-top: 0.6em;
+}
+
+figure img {
+  width: 50%;
+}
+
+figure figcaption {
+  color: var(--text_med);
+  font-size: 0.9em;
+  font-weight: 500;
+  margin-top: 0.5em;
+}
+
+@media only screen and (min-width: 500px) {
+  .cities {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .city-name span {
+    font-size: 1.2em;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .cities {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .city-temperature {
+    font-size: 3.1em;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .cities {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .city-temperature {
+    font-size: 3.5em;
+  }
+}
