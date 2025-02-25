@@ -1,3 +1,7 @@
+.ajax-section {
+  margin: 50px 0px 20px;
+}
+
 .cities {
   display: grid;
   grid-template-columns: 1fr;
@@ -9,11 +13,27 @@
 }
 
 .city {
-  background-color: white;
+  position: relative;
+  background-color: var(--text_light);
   color: var(--text_dark);
   min-height: 300px;
   border-radius: 0.7em;
   padding: 20px;
+}
+
+.city::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 5%;
+  height: 100px;
+  width: 90%;
+  border-radius: inherit; /* inherits the 0.7em of .city; */
+  background: var(
+    --text_light
+  ); /* instead of background-color, though works same; */
+  opacity: 0.4;
+  z-index: -1;
 }
 
 .city-name {
@@ -35,6 +55,7 @@
 }
 
 .city-temperature {
+  margin-top: 10px;
   font-size: 3em;
   font-weight: 700;
 }
@@ -56,6 +77,8 @@ figure figcaption {
   font-size: 0.9em;
   font-weight: 500;
   margin-top: 0.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media only screen and (min-width: 500px) {
@@ -84,6 +107,6 @@ figure figcaption {
   }
 
   .city-temperature {
-    font-size: 3.5em;
+    font-size: 3.3em;
   }
 }
