@@ -1,1 +1,10 @@
-continue: 3. specify some basic styles. (copy obvious ones eg colors & cram specifics for certain elems eg border:none in button & input , ....)
+
+
+
+
+---------------
+After Finishing Tutorial:
+ - use axios + async/await
+ - env vars for apiKey
+ - find if better way than js coding the <li> or else leave
+ - 
