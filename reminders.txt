@@ -1,4 +1,4 @@
-
+prevent duplicate search of cities - use searchedCities
 
 
 
@@ -7,4 +7,4 @@ After Finishing Tutorial:
  - use axios + async/await
  - env vars for apiKey
  - find if better way than js coding the <li> or else leave
- - 
+ - download own 6 icons, switch case, put in assets, lazy load them

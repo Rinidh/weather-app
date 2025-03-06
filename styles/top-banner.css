@@ -70,5 +70,6 @@ form span.msg {
 
   form span.msg {
     font-size: 0.8em;
+    min-height: 21px;
   }
 }
