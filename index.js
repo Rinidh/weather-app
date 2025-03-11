@@ -12,13 +12,36 @@ form.addEventListener("submit", (event) => {
 
   //prevent duplicate searches
   const searchedCities = document.querySelectorAll(".ajax-section .city-name")
-  for (let searchedCity of searchedCities) {
-    const cityName = searchedCity.dataset.name
-    if (cityName && cityName.toLowerCase().includes(inputVal)) { //convert to lower case because 'name' (prop in API response data) accessed is in sentence case ie "Jinja", which prevents .includes() from workign
-      msg.textContent = "You've already searched this 😭"
-      msg.style.visibility = "visible"
-      return
+  // for (let searchedCity of searchedCities) {
+  //   const cityName = searchedCity.dataset.name
+  //   if (cityName && cityName.toLowerCase().includes(inputVal)) { //convert to lower case because 'name' (prop in API response data) accessed is in sentence case ie "Jinja", which prevents .includes() from workign
+  //     msg.textContent = "You've already searched this 😭. Try adding the country acronym as well eg 'Athens, US' for same city in another country"
+  //     msg.style.visibility = "visible"
+  //     return
+  //   }
+  // }
+  const searchedCitiesArray = Array.from(searchedCities)
+  const duplicateCity = searchedCitiesArray.filter(el => {
+    const searchedNames = el.dataset.name
+
+    if (searchedNames.includes(",")) {
+      const searchedCityName = searchedNames.split(",")[0].toLowerCase()
+      const searchedCountry = searchedNames.split(",")[1].toLowerCase()
+
+      if (inputVal.includes(",")) {
+        if (inputVal.split(",")[1].length > 2)
+          return searchedCityName === inputVal.split(",")[0].toLowerCase()
+        return searchedCityName === inputVal.split(",")[0].toLowerCase() && searchedCountry === inputVal.split(",")[1].toLowerCase()
+      }
+      return searchedCityName === inputVal.toLowerCase()
     }
+  })
+  if (duplicateCity.length > 0) {
+    msg.textContent = "You've already searched this 😭. Try adding the country acronym as well eg 'Athens,US' for same city in another country"
+    msg.style.visibility = "visible"
+    form.reset()
+    input.focus()
+    return
   }
 
   fetch(url)
@@ -27,6 +50,8 @@ form.addEventListener("submit", (event) => {
       if (data.cod === "404") {
         msg.textContent = "Please search for a valid city 😭"
         msg.style.visibility = "visible"
+        form.reset()
+        input.focus()
         return
       }
 

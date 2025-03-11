@@ -1,4 +1,4 @@
-prevent duplicate search of cities - use searchedCities
+review the many many ifs & refactor
 
 
 
@@ -8,3 +8,4 @@ After Finishing Tutorial:
  - env vars for apiKey
  - find if better way than js coding the <li> or else leave
  - download own 6 icons, switch case, put in assets, lazy load them
+ - see "Next Steps" for more modification ideas at end of article: https://webdesign.tutsplus.com/build-a-simple-weather-app-with-vanilla-javascript--cms-33893t#scaffolding
